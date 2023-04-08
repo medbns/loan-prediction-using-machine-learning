@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Prediction des accords de credits</title>
+</head>
+<body>
+    <div class="login">
+        <h1>Simulation des accords de credits</h1>
+        <form action="{{ url_for('predict')}}"method="post">
+            <input type="Gender" name="Gender" id="Gender" placeholder="Gender">
+            <input type="Married" name="Married" id="Married" placeholder="Married" required="required">
+            <input type="Dependents" name="Dependents" id="Dependents" placeholder="Dependents">
+            <input type="Education" name="Education" id="Education" placeholder="Education">
+            <input type="Self_Employed" name="Self_Employed" id="Self_Employed" placeholder="Self_Employed">
+            <input type="Property_Area" name="Property_Area" id="Property_Area" placeholder="Property_Area">
+            <input type="ApplicantIncome" name="ApplicantIncome" id="ApplicantIncome" placeholder="ApplicantIncome">
+            <input type="CoapplicantIncome" name="CoapplicantIncome" id="CoapplicantIncome" placeholder="CoapplicantIncome">
+            <input type="LoanAmount" name="LoanAmount" id="LoanAmount" placeholder="LoanAmount">
+            <input type="Loan_Amount_Term" name="Loan_Amount_Term" id="Loan_Amount_Term" placeholder="Loan_Amount_Term">
+
+            <input type="Credit_History" name="Credit_History" id="Credit_History" placeholder="Credit_History">
+            <button type="submit" class="btn btn-primary btn-block btn-large"> Predict</button>
+        </form>
+        <br>
+   <br>
+   {{prediction_text}}
+       
+
+    </div>
+    
+</body>
+</html>
